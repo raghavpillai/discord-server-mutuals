@@ -18,6 +18,7 @@ TOKEN = os.getenv("TOKEN")
 
 bot = commands.Bot(command_prefix="!", self_bot=True, fetch_offline_members=True)
 
+st.set_page_config(layout="wide")
 if TOKEN is None:
     TOKEN = st.text_input("Enter your token:")
     if TOKEN is None:
@@ -26,8 +27,6 @@ if TOKEN is None:
 
 @bot.event
 async def on_ready():
-    st.set_page_config(layout="wide")
-
     st.title("Mutual Guilds")
     st.write("Logged in as", bot.user.name)
 
@@ -113,3 +112,9 @@ async def on_ready():
     st.components.v1.html(html_content, height=800)
 
 bot.run(TOKEN)
+
+@bot.event
+async def on_command_error(ctx, error):
+    if isinstance(error, commands.errors.LoginFailure):
+        st.write("Invalid token. Please enter a valid token in the text box above.")
+        st.stop()
