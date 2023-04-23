@@ -18,6 +18,12 @@ TOKEN = os.getenv("TOKEN")
 
 bot = commands.Bot(command_prefix="!", self_bot=True, fetch_offline_members=True)
 
+if TOKEN is None:
+    TOKEN = st.text_input("Enter your token:")
+    if TOKEN is None:
+        st.write("No token provided. Please enter a token in the text box above.")
+        st.stop()
+
 @bot.event
 async def on_ready():
     st.set_page_config(layout="wide")
