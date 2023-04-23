@@ -12,12 +12,9 @@ from discord.ext import commands
 from dotenv import load_dotenv
 from pyvis.network import Network
 
-
-
 load_dotenv()
 
 TOKEN = os.getenv("TOKEN")
-
 
 bot = commands.Bot(command_prefix="!", self_bot=True, fetch_offline_members=True)
 
