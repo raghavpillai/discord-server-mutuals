@@ -35,8 +35,8 @@ async def on_ready():
 
     users = defaultdict(set)
     for idx, guild in enumerate(guilds):
-        if len(users) >= 10:
-            break
+        # if len(users) >= 10:
+        #     break
 
         st.write(f"Processing mutual guilds for {guild.name} [{idx + 1}/{len(guilds)}]")
         try:
