@@ -12,7 +12,6 @@ import streamlit.components.v1 as stc
 import random
 
 load_dotenv()
-# Get token from .env file
 
 TOKEN = os.getenv("TOKEN")
 
@@ -49,10 +48,6 @@ async def on_ready():
 
                 if len(mutual_guilds) <= 1:
                     continue
-
-                # Break if we have processed 100 users
-                # if len(users) >= 10:
-                #     break
 
                 st.write(f"**[{member.name}] [Shares {len(mutual_guilds)} guilds]:**")
                 st.write(', '.join(mutual_guilds))
