@@ -1,15 +1,18 @@
+import os
+import random
 import discord
-from collections import defaultdict
-from discord.ext import commands
 import pandas as pd
 import streamlit as st
 import networkx as nx
 import matplotlib.pyplot as plt
-import os
+import streamlit.components.v1 as stc
+
+from collections import defaultdict
+from discord.ext import commands
 from dotenv import load_dotenv
 from pyvis.network import Network
-import streamlit.components.v1 as stc
-import random
+
+
 
 load_dotenv()
 
