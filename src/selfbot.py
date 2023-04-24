@@ -18,7 +18,7 @@ class SelfBot:
     def get_token(cls) -> str:
         """
         Gets the token from the environment variable TOKEN or from the text box if it is not set
-
+        
         :return: Token
         """
         token = os.getenv("TOKEN")
@@ -45,7 +45,10 @@ class SelfBot:
         guild_to_member_map = {} # dict[guild_name] = list(members)
         my_bar = st.progress(0, text="Processing guilds..")
         for idx, guild in enumerate(guilds):
-            my_bar.progress(idx/len(guilds), text=f"Processing guild {guild.name} [{idx + 1}/{len(guilds)}]...")
+            my_bar.progress(
+                idx/len(guilds), 
+                text=f"Processing guild {guild.name} [{idx + 1}/{len(guilds)}]..."
+            )
             Icons.server_logos[guild.name] = guild.icon or None
             try:
                 await guild.chunk()
