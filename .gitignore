@@ -1,3 +1,4 @@
 .env
 example.html
 lib/
+__pycache__/
