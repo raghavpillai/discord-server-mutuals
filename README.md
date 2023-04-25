@@ -4,6 +4,12 @@
 
 Discord Server Mutuals is a web application that visualizes your Discord server mutuals. It uses Python, Streamlit, Pyvis, and Pandas to generate an interactive graph that displays users who share servers with you.
 
+## How to Use
+While we have a hosted website available [here](https://raghavpillai-discord-server-mutuals-main-qmb6rz.streamlit.app/), we recommend you use the self-hosted version for token security. If you do use the hosted version, you can find steps to find your Discord user token in the installation section. 
+
+Once the app is running, allow it to scrape all your Discords for users. Larger servers may not be able to be processed due to the raw amount of users (a limitation of discord.py). The app will generate a dataframe that displays the users with the most amount of mutuals. You can also interact with the generated network graph. At the current moment, adding or removing guilds to visualize causes the entire app to reload, and forces rescraping of guild data. 
+
+
 ## Installation
 
 To use the application, you need to install the dependencies listed in the requirements.txt file. To do this, run the following command in your terminal:
@@ -33,9 +39,6 @@ After installing the dependencies, you can start the app by running the followin
 streamlit run main.py
 ```
 This will launch the app in your default web browser.
-
-## How to Use
-Once the app is running, allow it to scrape all your Discords for users. Larger servers may not be able to be processed due to the raw amount of users (a limitation of discord.py). The app will generate a dataframe that displays the users with the most amount of mutuals. You can also interact with the generated network graph. At the current moment, adding or removing guilds to visualize causes the entire app to reload, and forces rescraping of guild data. 
 
 ## Contributions
 Contributions to the Discord Server Mutuals project are welcome! If you want to contribute, please fork the repository and submit a pull request.
