@@ -24,6 +24,7 @@ Replace `DISCORD_USER_TOKEN` with your own Discord user token. To get your Disco
 6. In the Headers tab of the request details, scroll down to the Request Headers section and find the Authorization header.
 7. The value of the Authorization header is your Discord user token. Copy this value (do not share this with anyone).
 8. Paste the token into the .env file, replacing DISCORD_USER_TOKEN.
+
 Note: Do not share your Discord user token with anyone. Keep it safe and secure.
 
 ## How to Run
